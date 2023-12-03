@@ -1,9 +1,6 @@
-
-
-
-
 public class VariableNamesTheme {	
     public static void main(String[] args) {
+        
         //1 Разные переменные
         System.out.println("1. Разные переменные");
 
@@ -170,7 +167,7 @@ public class VariableNamesTheme {
         System.out.println("\n3. Аббревиатуры");
 
         //старый universally unique identifier
-        String oldUUID = "123e4567-e89b-12d3-a456-426655440000";
+        String oldUUID = "UUID";
         System.out.println("старый universally unique identifier = " + oldUUID);
 
         //Производитель оперативной памяти
@@ -191,10 +188,10 @@ public class VariableNamesTheme {
 
         //новый идентификатор клиента
         int newClientId = 1;
-        System.out.println("новый идентификатор клиента = " + newClientId);
+        System.out.println("Новый идентификатор клиента = " + newClientId);
 
         //кодировка american standard code for information interchange
         String encodingAscii = "Ascii";
-        System.out.println("кодировка american standard code for information interchange = " + encodingAscii);
+        System.out.println("Кодировка american standard code for information interchange = " + encodingAscii);
     }
 }
