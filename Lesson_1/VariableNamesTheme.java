@@ -1,6 +1,5 @@
-public class VariableNamesTheme {	
+public class VariableNamesTheme {
     public static void main(String[] args) {
-        
         //1 Разные переменные
         System.out.println("1. Разные переменные");
 
@@ -13,8 +12,8 @@ public class VariableNamesTheme {
         System.out.println("Сумма чисел = " + sumNumbers);
 
         //Произведение чисел
-        int multiplyingNums = 1000;
-        System.out.println("Произведение чисел = " + multiplyingNums);
+        int multiplyingNumbers = 1000;
+        System.out.println("Произведение чисел = " + multiplyingNumbers);
 
         //Максимальное число
         int maxNumber = 100;
@@ -25,24 +24,24 @@ public class VariableNamesTheme {
         System.out.println("Минимальное число = " + minNumber);
 
         //Количество десятков
-        int numTens = 2;
-        System.out.println("Количество десятков = " + numTens);
+        int numberTens = 2;
+        System.out.println("Количество десятков = " + numberTens);
 
         //Вес собаки
         double dogWeight = 15.2;
         System.out.println("Вес собаки = " + dogWeight + "кГ");
 
         //Исходное число
-        int originalNum = 20;
-        System.out.println("Исходное число = " + originalNum);
+        int originalNumber = 20;
+        System.out.println("Исходное число = " + originalNumber);
 
         //Процент по вкладу
         double depositPercent = 9.8;
         System.out.println("Процент по вкладу = " + depositPercent);
 
-        //(Переменная хранит сивол) &
-        char ascii38 = 38;
-        System.out.println("& = " + ascii38);
+        //(Переменная хранит символ) &
+        char ampersand = '&';
+        System.out.println("& = " + ampersand);
 
         //Код ошибки
         int errorCode = 5;
@@ -53,16 +52,16 @@ public class VariableNamesTheme {
         System.out.println("Тип сообщения = " + messageType);
 
         //Число нулей 
-        int numZeros = 3;
-        System.out.println("Число нулей = " + numZeros);
+        int numberZeros = 3;
+        System.out.println("Число нулей = " + numberZeros);
 
         //Уникальное число
-        int uniqueNum = 777;
-        System.out.println("Уникальное число = " + uniqueNum);
+        int uniqueNumber = 777;
+        System.out.println("Уникальное число = " + uniqueNumber);
 
         //Случайное число
-        int randomNum = 371;
-        System.out.println("Случайное число = " + randomNum);
+        int randomNumber = 371;
+        System.out.println("Случайное число = " + randomNumber);
 
         //Математическое выражение
         int mathEpression = 20;
@@ -121,54 +120,54 @@ public class VariableNamesTheme {
         System.out.println("Путь до файла = " + pathToFile);
 
         //количество чисел в каждой строке
-        int numOfNumbersInEachLine = 10;
-        System.out.println("Количество чисел в каждой строке = " + numOfNumbersInEachLine);
+        int numberOfNumbersInEachLine = 10;
+        System.out.println("Количество чисел в каждой строке = " + numberOfNumbersInEachLine);
 
         //2. boolean-переменные
         System.out.println("\n2. boolean-переменны");
 
         //сотни равны?
-        boolean hundredsEqual = false;
-        System.out.println("сотни равны? = " + hundredsEqual);
+        boolean isHundredsEqual = false;
+        System.out.println("сотни равны? = " + isHundredsEqual);
 
         //компьютер включен?
-        boolean computerOn = true;
-        System.out.println("компьютер включен? = " + computerOn);
+        boolean isComputerOn = true;
+        System.out.println("компьютер включен? = " + isComputerOn);
 
         //есть равные цифры?
-        boolean equalNumbers = false;
-        System.out.println("есть равные цифры? = " + equalNumbers);
+        boolean hasEqualNumbers = false;
+        System.out.println("есть равные цифры? = " + hasEqualNumbers);
 
         //(что-либо) создано?
-        boolean buttonCreated = true;
-        System.out.println("создано? = " + buttonCreated);
+        boolean isButtonCreated = true;
+        System.out.println("создано? = " + isButtonCreated);
 
         //(что-либо) пустое?
-        boolean emptyPlace = false;
-        System.out.println("пустое? = " + emptyPlace);
+        boolean isEmptyPlace = false;
+        System.out.println("пустое? = " + isEmptyPlace);
 
         //(что-либо) активное?
-        boolean activeDevice = false;
-        System.out.println("активное? = " + activeDevice);
+        boolean isActiveDevice = false;
+        System.out.println("активное? = " + isActiveDevice);
 
         //новый?
-        boolean newLesson = true;
-        System.out.println("новый? = " + newLesson);
+        boolean isNewLesson = true;
+        System.out.println("новый? = " + isNewLesson);
 
         //электронная почта действительная?
-        boolean emailValid = true;
-        System.out.println("электронная почта действительная? = " + emailValid);
+        boolean isEmailValid = true;
+        System.out.println("электронная почта действительная? = " + isEmailValid);
 
         //имеются уникальные строки?
-        boolean uniqueStrings = true;
-        System.out.println("имеются уникальные строки? = " + uniqueStrings);
+        boolean hasUniqueStrings = true;
+        System.out.println("имеются уникальные строки? = " + hasUniqueStrings);
 
         //3. Аббревиатуры
         System.out.println("\n3. Аббревиатуры");
 
         //старый universally unique identifier
-        String oldUUID = "UUID";
-        System.out.println("старый universally unique identifier = " + oldUUID);
+        String oldUuid = "UUID";
+        System.out.println("старый universally unique identifier = " + oldUuid);
 
         //Производитель оперативной памяти
         String ramManufacturer = "Kingston";
@@ -183,8 +182,8 @@ public class VariableNamesTheme {
         System.out.println("Потокол передачи гипертекста = " + http);
 
         //сокращенный uniform resource locator
-        String url = "url";
-        System.out.println("Cокращенный uniform resource locator = " + url);
+        String shortenedURL = "http://t.co/abcd";
+        System.out.println("Cокращенный uniform resource locator = " + shortenedURL);
 
         //новый идентификатор клиента
         int newClientId = 1;
