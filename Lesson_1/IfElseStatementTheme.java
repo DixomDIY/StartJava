@@ -35,108 +35,128 @@ public class IfElseStatementTheme {
 
          //2. Поиск большего числа
         System.out.println("\n2. Поиск большего числа");
-        int maxNumberOne = 20;
-        int maxNumberTwo = 41;
-        if(maxNumberOne > maxNumberTwo) {
-            System.out.println("Число 1 > числа 2");
-        } else if (maxNumberOne < maxNumberTwo) {
-            System.out.println("Число 1 < числа 2");
+        int a = 20;
+        int b = 41;
+        if(a > b) {
+            System.out.println(a + " > " + b);
+        } else if (a < b) {
+            System.out.println(a + " < " + b);
         } else {
-            System.out.println("Число 1 = числу 2");
+            System.out.println(a + " = " + b);
         }
 
         //3. Проверка числа
         System.out.println("\n3. Проверка числа");
-        int checkNumber = -50;
+        int checkNumber = 50;
         if(checkNumber == 0) {
-            System.out.println(checkNumber + " = 0, прогамма завершилас");
-            System.exit(1); 
-        } else if(checkNumber % 2 == 0) {
-            if(checkNumber > 0) {
-                System.out.println(checkNumber + " является положительным и чётным");
-            } else {
-                System.out.println(checkNumber + " является отрицательным и чётным");
-            }
+            System.out.println("Число " + checkNumber + " = 0, прогамма завершилась"); 
         } else {
-             if(checkNumber > 0) {
-                System.out.println(checkNumber + " является положительным и не чётным");
-            } else {
-                System.out.println(checkNumber + " является отрицательным и не чётным");
-            }
+            String polarity = " положительным ";
+            if(checkNumber < 0) {
+                polarity = " отрицательным ";
+            } 
+            String parityCheck = " ";
+            if(checkNumber % 2 != 0) {
+                parityCheck = " не ";
+            }            
+            System.out.println(checkNumber + " является" + polarity + "и" + parityCheck + "чётным");
         }
 
         //4. Поиск одинаковых цифр в числах
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int searchNumberOne = 123;
-        int searchNumberTwo = 223; 
-        if((searchNumberOne / 100 % 10 != searchNumberTwo / 100 % 10) && (searchNumberOne / 10 % 10 != searchNumberTwo / 10 % 10) && (searchNumberOne % 10 != searchNumberTwo % 10)) {
-            System.out.println("Все цифры в разрядах разные");
+        int numberA = 223; 
+        int firstDigitA = numberA / 100  % 10;
+        int secondDigitA = numberA / 10 % 10;
+        int thirdDigitA = numberA % 10;
+        int numberB = 123; 
+        int firstDigitB = numberB / 100 % 10;
+        int secondDigitB = numberB / 10 % 10;
+        int thirdDigitB = numberB % 10; 
+        if(firstDigitA != firstDigitB && secondDigitA != secondDigitB &&
+                thirdDigitA != thirdDigitB) {
+            System.out.println("В числах " + numberA + " и " + numberB +
+                    "все цифры в разрядах разные");
         } else {
-            if(searchNumberOne / 100 % 10 == searchNumberTwo / 100 % 10) {
-                System.out.println("В числах " + searchNumberOne + " и " + searchNumberTwo + " в 1 разряде одинаковая цифра = " + searchNumberOne / 100 % 10);
+            if(firstDigitA == firstDigitB) {
+                System.out.println("В числах " + numberA + " и " + numberB +
+                        " в 1 разряде одинаковая цифра = " + firstDigitA);
             }
-            if(searchNumberOne / 10 % 10 == searchNumberTwo / 10 % 10) {
-                System.out.println("В числах " + searchNumberOne + " и " + searchNumberTwo + " в 2 разряде одинаковая цифра = " + searchNumberOne / 10 % 10);
+            if(secondDigitA == secondDigitB) {
+                System.out.println("В числах " + numberA + " и " + numberB +
+                        " в 2 разряде одинаковая цифра = " + secondDigitA);
             }
-            if(searchNumberOne % 10 == searchNumberTwo % 10) {
-                System.out.println("В числах " + searchNumberOne + " и " + searchNumberTwo + " в 3 разряде одинаковая цифра = " + searchNumberOne % 10);
+            if(thirdDigitA == thirdDigitB) {
+                System.out.println("В числах " + numberA + " и " + numberB +
+                        " в 3 разряде одинаковая цифра = " + thirdDigitA);
             }
+        }
+
+        //5. Определение символа по его коду
+        System.out.println("\n5. Определение символа по его коду");
+        char symbol = '\u0057';
+        if(symbol > 47 && symbol < 58) {
+            System.out.println("Символ " + symbol + " является цифрой");
+        } else if (symbol > 64 && symbol < 91) {
+            System.out.println("Символ " + symbol + " является большой буквой");
+        } else if (symbol > 96 && symbol < 123) {
+            System.out.println("Символ " + symbol + " является маленькой буквой");
+        } else {
+            System.out.println("Символ " + symbol + " не буква и не цифра");
         }
 
         //6. Подсчет суммы вклада и начисленных банком %
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int deposit = 300100;
+        int interestRate;
         if(deposit < 100000) {
-            System.out.println("Сумма вкалада " + deposit + " руб, начислено 5% = " + (deposit / 100 * 5) + " руб, итого = " + (deposit + deposit / 100 * 5) + " руб");
+            interestRate = 5;
         } else if (deposit <= 300000) {
-            System.out.println("Сумма вкалада " + deposit + " руб, начислено 7% = " + (deposit / 100 * 7) + " руб, итого = " + (deposit + deposit / 100 * 7) + " руб");
+            interestRate = 7;
         } else {
-            System.out.println("Сумма вкалада " + deposit + " руб, начислено 10% = " + (deposit / 100 * 10) + " руб, итого = " + (deposit + deposit / 100 * 10) + " руб");
+            interestRate = 10;
         }
+        System.out.println("Сумма вкалада " + deposit +
+                " руб, начислено " + interestRate + "% = " + (deposit / 100 * interestRate) +
+                " руб, итого = " + (deposit + deposit / 100 * 10) + " руб");
 
         //7.Определение оценки по предметам
         System.out.println("\n7.Определение оценки по предметам");
-        int hystory = 59;
-        int programm = 92;
-        int historyScore = 2;
-        int programmScore = 2;
-        if(hystory <= 60) {
-            System.out.println("История оценка 2");
-        } else if (hystory > 60 && hystory <= 73) {
-            historyScore = 3;
-            System.out.println("История оценка 3");
-        } else if (hystory > 73 && hystory <= 91) {
-            historyScore = 4;
-            System.out.println("История оценка 4");
-        } else if (hystory > 91) {
-            historyScore = 5;
-            System.out.println("История оценка 5");
+        int finalResultHystory = 59;
+        int finalResultProgramm = 92;
+        int historyGrade = 2;
+        int programmGrade = 2;
+        if(finalResultHystory > 60 && finalResultHystory <= 73) {
+            historyGrade = 3; 
+        } else if (finalResultHystory > 73 && finalResultHystory <= 91) {
+            historyGrade = 4; 
+        } else if (finalResultHystory > 91) {
+            historyGrade = 5; 
         }
-        if(programm <= 60) {
-            System.out.println("Программирование оценка 2");
-        } else if (programm > 60 && programm <= 73) {
-            programmScore = 3;
-            System.out.println("Программирование оценка 3");
-        } else if (programm > 73 && programm <= 91) {
-            programmScore = 4;
-            System.out.println("Программирование оценка 4");
-        } else if (programm > 91) {
-            programmScore = 5;
-            System.out.println("Программирование оценка 5");
+        if(finalResultProgramm > 60 && finalResultProgramm <= 73) {
+            programmGrade = 3; 
+        } else if (finalResultProgramm > 73 && finalResultProgramm <= 91) {
+            programmGrade = 4; 
+        } else if (finalResultProgramm > 91) {
+            programmGrade = 5; 
         } 
-        System.out.println("Средний балл оценок по предметам = " + (double)(programmScore + historyScore) / 2);
-        System.out.println("Средний процент по предметам = " + (double)(programm + hystory) / 2 + "%");
+        System.out.println("История оценка " + historyGrade);
+        System.out.println("Программирование оценка " + programmGrade);
+        System.out.println("Средний балл оценок по предметам = " +
+                (double) (programmGrade + historyGrade) / 2);
+        System.out.println("Средний процент по предметам = " +
+                (double) (finalResultProgramm + finalResultHystory) / 2 + "%");
 
         //8.Расчет годовой прибыли
         System.out.println("\n8.Расчет годовой прибыли");
         int monthlySales = 13000;
         int rentalCost = 5000;
         int productionCost = 9000;
+        int months = 12;
         int profit = monthlySales - rentalCost - productionCost; 
         if(profit > 0) {
-           System.out.println("Прибыль за год: +" + profit*12 + " руб.");
+           System.out.println("Прибыль за год: +" + profit * months + " руб.");
         } else {
-           System.out.println("Прибыль за год: " + profit*12 + " руб.");  
-        }     
+           System.out.println("Прибыль за год: " + profit * months + " руб.");
+        }
     }
 }

@@ -4,11 +4,11 @@ public class VariableNamesTheme {
         System.out.println("1. Разные переменные");
 
         //Цифра
-        int number = 10; 
+        int number = 10;
         System.out.println("Цифра " + number);
 
         //Сумма чисел
-        int sumNumbers = 100; 
+        int sumNumbers = 100;
         System.out.println("Сумма чисел = " + sumNumbers);
 
         //Произведение чисел
@@ -135,8 +135,8 @@ public class VariableNamesTheme {
         System.out.println("компьютер включен? = " + isComputerOn);
 
         //есть равные цифры?
-        boolean hasEqualNumbers = false;
-        System.out.println("есть равные цифры? = " + hasEqualNumbers);
+        boolean isEqualHundreds = false;
+        System.out.println("есть равные цифры? = " + isEqualHundreds);
 
         //(что-либо) создано?
         boolean isButtonCreated = true;
@@ -155,8 +155,8 @@ public class VariableNamesTheme {
         System.out.println("новый? = " + isNewLesson);
 
         //электронная почта действительная?
-        boolean isEmailValid = true;
-        System.out.println("электронная почта действительная? = " + isEmailValid);
+        boolean isValidEmail = true;
+        System.out.println("электронная почта действительная? = " + isValidEmail);
 
         //имеются уникальные строки?
         boolean hasUniqueStrings = true;
@@ -182,8 +182,8 @@ public class VariableNamesTheme {
         System.out.println("Потокол передачи гипертекста = " + http);
 
         //сокращенный uniform resource locator
-        String shortenedURL = "http://t.co/abcd";
-        System.out.println("Cокращенный uniform resource locator = " + shortenedURL);
+        String shortUrl = "http://t.co/abcd";
+        System.out.println("Cокращенный uniform resource locator = " + shortUrl);
 
         //новый идентификатор клиента
         int newClientId = 1;
