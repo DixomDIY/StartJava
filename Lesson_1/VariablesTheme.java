@@ -79,8 +79,8 @@ public class VariablesTheme {
         System.out.println("Код " + (int) dollar + " символ " + dollar);
         char asterisk = '*';
         System.out.println("Код " + (int) asterisk + " символ " + asterisk);
-        char mail = '@';
-        System.out.println("Код " + (int) mail + " символ " + mail);
+        char atSign = '@';
+        System.out.println("Код " + (int) atSign + " символ " + atSign);
         char verticalBar = '|';
         System.out.println("Код " + (int) verticalBar + " символ " + verticalBar);
         char tilde = '`';
@@ -95,8 +95,7 @@ public class VariablesTheme {
         char closeBracket = ')';
         System.out.println("    " + slash + backslash);
         System.out.println("   " + slash + "  " + backslash);
-        System.out.println("  " + slash + underscore + openBracket + " " + closeBracket +
-                backslash);
+        System.out.println("  " + slash + underscore + openBracket + " " + closeBracket + backslash);
         System.out.println(" " + slash + "      " + backslash);
         System.out.println("" + slash + underscore + underscore + underscore + underscore +
                 slash + backslash + underscore + underscore + backslash);
@@ -104,22 +103,23 @@ public class VariablesTheme {
         //8 Вывод количества сотен, десятков и единиц числа
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
         int number = 123;
-        int units =  number % 10;
-        int dozens = number / 10;
+        int ones = number % 10;
+        int tens = number / 10 % 10;
         int hundreds = number / 100; 
         System.out.println("Число " + number + " содержит:");
-        System.out.println("  сотен - " + hundreds);
-        System.out.println("  десятков - " + dozens);
-        System.out.println("  едениц - " + units);
-        System.out.println("Сумма его цифер = " + (hundreds % 10 + dozens % 10 + units % 10));
-        System.out.println("Произведение = " + (hundreds % 10 * dozens % 10 * units % 10));
+        System.out.println(" сотен - " + hundreds);
+        System.out.println(" десятков - " + tens);
+        System.out.println(" едениц - " + ones);
+        System.out.println("Сумма его цифер = " + (hundreds + tens + ones));
+        System.out.println("Произведение = " + (hundreds * tens * ones));
 
         //9 Вывод времени
         System.out.println("\n9. Вывод времени");
-        int counter = 86399;
-        int hours = counter / 3600;
-        int minutes = counter % 3600 / 60;
-        int seconds = counter % 60;       
-        System.out.println(" Число " + counter + " в формате ЧЧ:ММ:СС = " + hours + ":" + minutes + ":" + seconds); 
+        int totalSeconds = 86399;
+        int hours = totalSeconds / 3600;
+        int minutes = totalSeconds % 3600 / 60;
+        int seconds = totalSeconds % 60;       
+        System.out.println("Число " + totalSeconds  +
+                " в формате ЧЧ:ММ:СС = " + hours + ":" + minutes + ":" + seconds); 
     }
 }

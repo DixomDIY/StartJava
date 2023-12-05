@@ -135,8 +135,8 @@ public class VariableNamesTheme {
         System.out.println("компьютер включен? = " + isComputerOn);
 
         //есть равные цифры?
-        boolean isEqualHundreds = false;
-        System.out.println("есть равные цифры? = " + isEqualHundreds);
+        boolean hasNumbersEqual = false;
+        System.out.println("есть равные цифры? = " + hasNumbersEqual);
 
         //(что-либо) создано?
         boolean isButtonCreated = true;
