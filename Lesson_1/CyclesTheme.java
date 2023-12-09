@@ -6,15 +6,15 @@ public class CyclesTheme {
         int endSegment = 21;
         int sumEvenNumbers = 0;
         int sumOddNumbers = 0;
-        int pointer = startSegment;
+        int counter = startSegment;
         do {
-            if(pointer % 2 == 0) {
-                sumEvenNumbers += pointer;
+            if(counter % 2 == 0) {
+                sumEvenNumbers += counter;
             } else {
-                sumOddNumbers += pointer;
+                sumOddNumbers += counter;
             }
-            pointer++;
-        } while (pointer <= endSegment);
+            counter++;
+        } while (counter <= endSegment);
         System.out.println("В отрезке [" + startSegment + ", " + endSegment +
                 "] сумма четных чисел = " + sumEvenNumbers + ", а нечетных = " + sumOddNumbers);
 
@@ -37,38 +37,38 @@ public class CyclesTheme {
         if (c < min) {
             min = c;
         }
-        for (int i = max-1; i > min; i--) {
+        for (int i = max - 1; i > min; i--) {
             System.out.printf("%3d", i);
         }
 
         //3. Вывод реверсивного числа и суммы его цифр
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
-        int number = 1234; 
+        int number = 1234;
         int sumDigits = 0;
         while (number > 0) {
             int digit = number % 10;
             System.out.print(digit);
             sumDigits += digit;
             number /= 10;
-        } 
+        }
         System.out.println("\nСумма чисел = " + sumDigits);
 
         //4. Вывод чисел в несколько строк
         System.out.println("\n4. Вывод чисел в несколько строк");
         startSegment = 1;
         int endInterval = 24;
-        pointer = 0;
+        counter = 0;
         for (int i = startSegment; i < endInterval; i++) {
-            if (i % 2 != 0){
+            if (i % 2 != 0) {
                 System.out.printf("%2d ", i);
-                pointer++;
-                if (pointer > 4 ){
-                    pointer = 0;
+                counter++;
+                if (counter > 4) {
+                    counter = 0;
                     System.out.println();
                 }
             }
-            if (i == endInterval - 1 && pointer != 0) {
-                for (int j = pointer; j < 5; j++){
+            if (i == endInterval - 1 && counter != 0) {
+                for (int j = counter; j < 5; j++) {
                      System.out.printf("%2d ", 0);
                 }
             }
@@ -129,28 +129,27 @@ public class CyclesTheme {
  
         //7. Отображение ASCII-символов
         System.out.println("\n7. Отображение ASCII-символов");
-        System.out.printf("%-7s   %-9s   %-11s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
-
-        for (int i = 0; i < 6; i++) {
-            char symbol = (char) (15 + i * 2);
-            System.out.printf("%4d          %1s            %-20s  %n",
-                    (int) symbol, symbol, Character.getName(symbol));
-        }
-        for (int i = 0; i < 13; i++) {
-            char symbol = (char) (98 + i * 2);
-            System.out.printf("%4d          %1s            %-20s  %n",
-                    (int) symbol, symbol, Character.getName(symbol));
+        System.out.printf("%-10s%-12s%-11s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
+        startSegment = '\u000f';
+        endSegment = (int) 'z';
+        for (char i = (char) startSegment; i <= endSegment; i++) {
+            if(i == '\u001A') {
+                i = 'a';
+            }
+            if (i % 2 != 0) {
+                System.out.printf("%4d%11s            %-20s%n", (int) i, i, Character.getName(i));
+            }
         }
 
         //8. Проверка, является ли число палиндромом
         System.out.println("\n8. Проверка, является ли число палиндромом");
         number = 1234321;
-        int reversNumber = 0;
-        for (int i = number; i > 0; i /= 10 ) {
-            reversNumber = reversNumber * 10 + i % 10;
+        int reverseNumber = 0;
+        for (int i = number; i > 0; i /= 10) {
+            reverseNumber = reverseNumber * 10 + i % 10;
         }
         String polindromCheck = " ";
-        if (number != reversNumber) {
+        if (number != reverseNumber) {
             polindromCheck = " не ";
         }
         System.out.println("число " + number + polindromCheck + "является палиндромом");
@@ -158,43 +157,46 @@ public class CyclesTheme {
         //9. Проверка, является ли число счастливым
         System.out.println("\n9. Проверка, является ли число счастливым");
         number = 225252;
-        int luckyNumberA = 0;
-        int luckyNumberB = 0;
-        int counter = 0;
-        for (int i = number; i > 0; i /= 10 ) {
+        int luckyNumberA = number / 1000;
+        int luckyNumberB = number % 1000;
+        int sumLuckyNumberA = 0;
+        int sumLuckyNumberB = 0;
+        counter = 0;
+        for (int i = number; i > 0; i /= 10) {
+            int digit = i % 10;
             if (counter > 2) {
-                luckyNumberA = luckyNumberA + i % 10;
-            } else {
-                luckyNumberB = luckyNumberB + i % 10;
+                sumLuckyNumberA += digit;
+            } else { 
+                sumLuckyNumberB += digit;
             }
             counter++;
         }
         String checkingHappy = " ";
-        if (luckyNumberA != luckyNumberB) {
+        if (sumLuckyNumberA != sumLuckyNumberB) {
             checkingHappy = " не ";
         }
         System.out.println("Число " + number + checkingHappy +
-                "является счастливым Сумма цифр ABC = " + luckyNumberA +
-                ", а сумма DEF = " + luckyNumberB );
+                "является счастливым Сумма цифр " + luckyNumberA + " = " + sumLuckyNumberA +
+                ", а сумма " + luckyNumberB + " = " + sumLuckyNumberB );
 
         //10. Отображение таблицы умножения Пифагора
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
-        System.out.println("    ТАБЛИЦА     ПИФОГОРА");
-        for (int r = 1; r < 10; r++) {
-            if (r == 2) {
+        System.out.println("    ТАБЛИЦА     ПИФАГОРА");
+        for (int i = 1; i < 10; i++) {
+            if (i == 2) {
                 System.out.println("----+------------------------");
             }
-            for (int i = 1; i < 10; i++) {
-                if (i == 2) {
+            for (int j = 1; j < 10; j++) {
+                if (j == 2) {
                      System.out.printf("%2s", "|");
                  }
-                if (r * i != 1) {
-                    System.out.printf("%3d", r * i);
+                if (i * j != 1) {
+                    System.out.printf("%3d", i * j);
                 } else {
                     System.out.printf("%3s", "   ");
                 }
             }
-            System.out.print("\n");
+            System.out.println();
         }
     }
 }
