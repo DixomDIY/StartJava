@@ -99,22 +99,22 @@ public class CyclesTheme {
         }
         System.out.println();
 
-        int row = rows;
-        while (row != 0) {
+        counter = rows;
+        while (counter != 0) {
             int column = 0;
-            while (column < row) {
+            while (column < counter) {
                 System.out.print("#");
                 column++;
             }
             System.out.println();
-            row--;
+            counter--;
         }
         System.out.println();
 
         int column = 0;
         do {
             int current = 0;
-            if (row < rows / 2 + 1) {
+            if (counter < rows / 2 + 1) {
                 column++;
             } else {
                 column--;
@@ -123,17 +123,15 @@ public class CyclesTheme {
                 System.out.print("$");
                 current++;
             } while (current < column);
-            row++;
+            counter++;
             System.out.println();
-        } while (row < rows);
+        } while (counter < rows);
  
         //7. Отображение ASCII-символов
         System.out.println("\n7. Отображение ASCII-символов");
-        System.out.printf("%-10s%-12s%-11s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
-        startSegment = '\u000f';
-        endSegment = (int) 'z';
-        for (char i = (char) startSegment; i <= endSegment; i++) {
-            if(i == '\u001A') {
+        System.out.printf("%-10s%-12s%-11s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");         
+        for (char i = 15; i <= 'z'; i++) {
+            if(i == 26) {
                 i = 'a';
             }
             if (i % 2 != 0) {
@@ -156,9 +154,7 @@ public class CyclesTheme {
 
         //9. Проверка, является ли число счастливым
         System.out.println("\n9. Проверка, является ли число счастливым");
-        number = 225252;
-        int luckyNumberA = number / 1000;
-        int luckyNumberB = number % 1000;
+        number = 225252; 
         int sumLuckyNumberA = 0;
         int sumLuckyNumberB = 0;
         counter = 0;
@@ -176,8 +172,8 @@ public class CyclesTheme {
             checkingHappy = " не ";
         }
         System.out.println("Число " + number + checkingHappy +
-                "является счастливым Сумма цифр " + luckyNumberA + " = " + sumLuckyNumberA +
-                ", а сумма " + luckyNumberB + " = " + sumLuckyNumberB );
+                "является счастливым Сумма цифр " + number / 1000 + " = " + sumLuckyNumberA +
+                ", а сумма " + number % 1000 + " = " + sumLuckyNumberB );
 
         //10. Отображение таблицы умножения Пифагора
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
