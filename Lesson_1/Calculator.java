@@ -15,7 +15,7 @@ public class Calculator {
             if (b == 0) {
                 System.out.println("На 0 делить нельзя");
                 isError = true;
-            }else{
+            } else {
                 result = (double) a / b;
             }
         } else if (sign == '^') {
@@ -34,7 +34,7 @@ public class Calculator {
             System.out.println("Калькулятор не умеет выполнять вычисление " + sign);
             isError = true;
         }
-        if(!isError){
+        if (!isError) {
             System.out.println(a + " " + sign + " " + b + " = " + result);
         } 
     }

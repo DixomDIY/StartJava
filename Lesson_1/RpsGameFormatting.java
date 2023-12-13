@@ -1,10 +1,12 @@
 import java.util.Random;
+
 // Игра Камень-Ножницы-Бумага
 public class RpsGameFormatting {
     public static void main(String[] args) throws InterruptedException {
         String rock = "R";
-        String scissors= "S";
-        String paper = "P";
+        String scissors = "S";
+        String paper = "P"; 
+
         // Ход первого игрока
         String name1 = "HEL";
         System.out.println("Ход " + name1 + ": ");
@@ -25,6 +27,7 @@ public class RpsGameFormatting {
             Thread.sleep(100);
         }
         System.out.println(sign1);
+        
         // Ход второго игрока
         String name2 = "WALLE";
         System.out.println("Ход " + name2 + ": ");
@@ -44,6 +47,7 @@ public class RpsGameFormatting {
             Thread.sleep(100);
         }
         System.out.println(sign2);
+
         if (sign1.equals(sign2)) {
             System.out.println("Победила дружба!");
             return;
