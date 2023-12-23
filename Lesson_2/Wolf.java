@@ -34,12 +34,12 @@ public class Wolf {
         return age;
     }
 
-    public String setAge(int age) {
+    public boolean setAge(int age) {
         if (age > 8) {
-            return "Не корректный возраст";
+            return false;
         }
         this.age = age;
-        return "Указан взраст " + age;
+        return true;
     }
 
     public String getColor() {

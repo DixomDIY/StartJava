@@ -5,8 +5,10 @@ public class WolfTest {
         wolf.setGender("Мужской"); 
         wolf.setNickname("Шарик");
         wolf.setWeight(20);
-        System.out.println(wolf.setAge(10));
-        System.out.println(wolf.setAge(5));
+        if(!wolf.setAge(10)){
+            System.out.println("Некорректный возраст");
+        } 
+        wolf.setAge(5);
         wolf.setColor("Серый");
         System.out.println("Создан объект волк:\n" +
                 "Пол - " + wolf.getGender() + "\n" +
