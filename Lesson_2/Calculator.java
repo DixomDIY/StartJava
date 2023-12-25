@@ -1,40 +1,35 @@
 public class Calculator {
 
-    private int a = 5;
-    private int b = 2;
-    private char sign = '^';
-    private double result = 0;
+    private int a;
+    private int b;
+    private char sign;
 
-    public void setA (int a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public int getA () {
+    public int getA() {
         return a;
     }
 
-    public void setB (int b) {
+    public void setB(int b) {
         this.b = b;
     }
 
-    public int getB () {
+    public int getB() {
         return b;
     }
 
-    public void setSign (char sign) {
+    public void setSign(char sign) {
         this.sign = sign;
     }
 
-    public char getSign () {
+    public char getSign() {
         return sign;
-    }
+    } 
 
-    public double getResult() {
-        return result;
-    }
-
-    public boolean calculation() {
-        boolean hasSolve = true;
+    public double performCalculation() { 
+        double result = 0;
         switch (sign) {
             case '+':
                 result = a + b;
@@ -48,7 +43,6 @@ public class Calculator {
             case '/':
                 if (b == 0) {
                     System.out.println("На 0 делить нельзя");
-                    hasSolve = false;
                 } else {
                     result = (double) a / b;
                 }
@@ -62,16 +56,14 @@ public class Calculator {
             case '%':
                 if (b == 0) {
                     System.out.println("На 0 делить нельзя");
-                    hasSolve = false;
                 } else {
                     result = a % b;
                 }
                 break;
             default:
-                System.out.println("Калькулятор не пыполняет математические операции " + sign);
-                hasSolve = false;
+                System.out.println("Калькулятор не выполняет математические операции " + sign);
                 break;
         }
-        return hasSolve;
+        return result;
     }
 }
