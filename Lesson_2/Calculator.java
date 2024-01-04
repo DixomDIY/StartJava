@@ -28,42 +28,37 @@ public class Calculator {
         return sign;
     } 
 
-    public double performCalculation() { 
-        double result = 0;
+    public double calculate() {
         switch (sign) {
             case '+':
-                result = a + b;
-                break;
+                return a + b; 
             case '-':
-                result = a - b;
-                break;
+                return a - b; 
             case '*':
-                result = a * b;
-                break;
+                return a * b; 
             case '/':
                 if (b == 0) {
                     System.out.println("На 0 делить нельзя");
+                    return 0;
                 } else {
-                    result = (double) a / b;
-                }
-                break;
+                    return (double) a / b;
+                } 
             case '^':
-                result = a;
+                double result = a;
                 for (int i = 1; i < b; i++) {
-                     result *= a;
+                    result *= a;
                 }
-                break;
+                return result; 
             case '%':
                 if (b == 0) {
                     System.out.println("На 0 делить нельзя");
+                    return 0;
                 } else {
-                    result = a % b;
+                    return a % b;
                 }
-                break;
             default:
                 System.out.println("Калькулятор не выполняет математические операции " + sign);
-                break;
-        }
-        return result;
+                return 0;
+        } 
     }
 }
