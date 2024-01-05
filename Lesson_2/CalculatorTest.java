@@ -17,7 +17,7 @@ public class CalculatorTest {
                     " = " + calc.calculate());
             scaner.nextLine();
            
-             do {
+            do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
                 answer = scaner.nextLine();
             } while (!answer.equals("yes") && !answer.equals("no"));
