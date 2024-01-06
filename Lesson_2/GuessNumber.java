@@ -3,48 +3,50 @@ import java.util.Scanner;
 
 public class GuessNumber {
 
-    private Scanner scanner = new Scanner(System.in);
-    private int startInterval;
-    private int endSegment;
     private Player player1;
     private Player player2;
 
-    public GuessNumber(int startInterval, int endSegment, Player player1, Player player2) {
-        this.startInterval = startInterval;
-        this.endSegment = endSegment;
+    public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
- 
-    public void launchingGame() {
-        int guessNum =  startInterval + (int) (Math.random() * endSegment);
-        Player player = player2; 
-        do {
-            if (player == player1) {
-                player = player2;
-            } else {
-                player = player1;
+
+    private int startInterval = 0;
+    private int endSegment = 100;
+    public void play() {
+        int guessNum = startInterval + (int) (Math.random() * endSegment);
+        Player currentPlayer = player1;
+        currentPlayer.setNum(-1);
+
+        while(guessNum != currentPlayer.getNum()) {
+            currentPlayer.setNum(enterNum(currentPlayer));
+            if(!isGuessed(guessNum, currentPlayer)){
+                currentPlayer = currentPlayer == player1 ? player2 : player1;
             }
-            System.out.print(player.getName() + " введи число: ");
-            player.setNum(scanner.nextInt());
-        } while (!numberСheck(guessNum, player));
+        }
     }
 
-    private boolean numberСheck(int guessNum, Player player) {
-        if (player.getNum() <= startInterval || player.getNum() > endSegment) {
+    private Scanner scanner = new Scanner(System.in);
+    private int enterNum(Player currentPlayer) {
+        System.out.print(currentPlayer.getName() + " введи число: ");
+        return scanner.nextInt();
+    }
+
+    private boolean isGuessed(int guessNum, Player currentPlayer) {
+        if (currentPlayer.getNum() <= startInterval || currentPlayer.getNum() > endSegment) {
             System.out.println("Загаданное число не входит в полуинтервал ("
                     + startInterval + ", " + endSegment + "]");
             return false;
         }
-        if (player.getNum() != guessNum) {
-            if (guessNum > player.getNum()) {
-                System.out.println("Число " + player.getNum() + " меньше загаданного");
+        if (currentPlayer.getNum() != guessNum) {
+            if (guessNum > currentPlayer.getNum()) {
+                System.out.println("Число " + currentPlayer.getNum() + " меньше загаданного");
             } else {
-                System.out.println("Число " + player.getNum() + " больше загаданного");
+                System.out.println("Число " + currentPlayer.getNum() + " больше загаданного");
             }
             return false;
         }
-        System.out.println("Игрок " + player.getName() + " выиграл. Число " + guessNum);
+        System.out.println("Игрок " + currentPlayer.getName() + " выиграл. Число " + guessNum);
         return true;
     }
 }
