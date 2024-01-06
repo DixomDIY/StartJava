@@ -20,8 +20,8 @@ public class GuessNumber {
 
         while(guessNum != currentPlayer.getNum()) {
             currentPlayer.setNum(enterNum(currentPlayer));
-            if(!isGuessed(guessNum, currentPlayer)){
-                currentPlayer = currentPlayer == player1 ? player2 : player1;
+            if(!isGuessed(guessNum, currentPlayer)) {
+                currentPlayer = getCurrentPlayer(currentPlayer);
             }
         }
     }
@@ -32,17 +32,22 @@ public class GuessNumber {
         return scanner.nextInt();
     }
 
+    private Player getCurrentPlayer(Player currentPlayer) {
+        return currentPlayer == player1 ? player2 : player1;
+    }
+
     private boolean isGuessed(int guessNum, Player currentPlayer) {
-        if (currentPlayer.getNum() <= startInterval || currentPlayer.getNum() > endSegment) {
+        int playerNum = currentPlayer.getNum();
+        if (playerNum <= startInterval || playerNum > endSegment) {
             System.out.println("Загаданное число не входит в полуинтервал ("
                     + startInterval + ", " + endSegment + "]");
             return false;
         }
-        if (currentPlayer.getNum() != guessNum) {
-            if (guessNum > currentPlayer.getNum()) {
-                System.out.println("Число " + currentPlayer.getNum() + " меньше загаданного");
+        if (playerNum != guessNum) {
+            if (guessNum > playerNum) {
+                System.out.println("Число " + playerNum + " меньше загаданного");
             } else {
-                System.out.println("Число " + currentPlayer.getNum() + " больше загаданного");
+                System.out.println("Число " + playerNum + " больше загаданного");
             }
             return false;
         }
