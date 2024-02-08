@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.calculator;
+
 public class Calculator {
 
     private int a;
@@ -18,10 +20,10 @@ public class Calculator {
 
     public int getB() {
         return b;
-    }
-
-    public void setSign(char sign) {
-        this.sign = sign;
+    
+}
+    public void setSign(char sign) 
+{        this.sign = sign;
     }
 
     public char getSign() {
