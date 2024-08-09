@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.rpg;
+package com.startjava.lesson_2_3_4.rpg;
 
 import java.util.Random;
 import java.util.Scanner;

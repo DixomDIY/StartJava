@@ -11,7 +11,7 @@ public class CyclesTheme {
         int counter = startSegment;
         do {
             if(counter % 2 == 0) {
-                sumEvenNumbers += counter;
+                
             } else {
                 sumOddNumbers += counter;
             }
